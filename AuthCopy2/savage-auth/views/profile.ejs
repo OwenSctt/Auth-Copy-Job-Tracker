@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-list"></span> Job Application Tracker</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <!-- <div class="row">
+
+        <!-- LOCAL INFORMATION
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div> -->
+        </div> 
+        <div class="col-sm">
+          <div class="mes1">
+          <h3>JOB INFORMATION</h3>
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li class="message">
+              <span><%= messages[i].name%></span>
+              <span><%= messages[i].role%></span>
+              <span><%= messages[i].date%></span>
+              <span><%= messages[i].location%></span>
+              <span><%= messages[i].apply%></span>
+              <span><%= messages[i].job%></span>
+              <span>Status: <%= messages[i].status || 'Pending' %></span>
+              <form action="/updateStatus" method="POST">
+                <input type="hidden" name="id" value="<%= messages[i]._id %>">
+                <input type="text" name="status" placeholder="Update status" value="<%= messages[i].status || '' %>" class="status">
+                <button type="submit" class="status" >Update</button>
+              </form>
+              <!-- <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span> -->
+              <!-- <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span> --> 
+              <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+            </li>
+          <% } %>
+          </ul>
+          </div>
+          <div class="inputs">
+          <h2>Enter Job Info</h2>
+        <% if (user.local.email) { %>
+          <form action="/messages" method="POST">
+            <input type="text" placeholder="Company Name" name="name">
+            <input type="text" placeholder="Role" name="role">
+            <input type="date" placeholder="Date Added To Sheet" name="date">
+            <input type="text" placeholder="Location" name="location">
+            <input type="text" placeholder="Applied?" name="apply">
+            <input type="text" placeholder="Salary" name="job" id="job">
+            <button type="submit">Submit</button>
+          </form>
+          </div>
+        </div>
+        <% } %>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

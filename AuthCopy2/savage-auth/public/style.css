@@ -1,0 +1,44 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+}
+img{
+  height: 200px;
+}
+.fa-trash::before{
+  content: "\f014";
+}
+.message{
+  display: flex;
+}
+.col-sm{
+ display: flex;
+ justify-content: center;
+ margin-left: 15%;
+ margin-right: 15%;
+ flex-direction: row-reverse;
+}
+.mes1{
+  flex: 1;
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.message span{
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.mes1 h3{
+  margin-left: 9%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  
+}
+.status{
+  max-width: 75%;
+}
