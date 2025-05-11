@@ -22,3 +22,6 @@ git clone https://github.com/OwenSctt/Full-Stack-Hit-List.git
 cd auth-job-tracker
 npm install
 npm start
+```
+##Usage
+Visit http://localhost:3000, create an account, and start tracking your job applications.
