@@ -18,7 +18,7 @@ A full-stack job application tracker allowing users to register, log in, and man
 
 ## Installation
 ```bash
-git clone https://github.com/OwenSctt/auth-job-tracker.git
+git clone https://github.com/OwenSctt/Full-Stack-Hit-List.git
 cd auth-job-tracker
 npm install
 npm start
