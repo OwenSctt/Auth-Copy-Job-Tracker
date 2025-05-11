@@ -23,5 +23,5 @@ cd auth-job-tracker
 npm install
 npm start
 ```
-##Usage
+## Usage
 Visit http://localhost:3000, create an account, and start tracking your job applications.
